@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="animacion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANIMACIÓN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ow-sq-04G">
+                                <rect key="frame" x="106" y="72" width="228" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="PSZ-Hg-FQA"/>
+                                    <constraint firstAttribute="width" constant="228" id="rDy-GP-IWT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-iP-bHB">
+                                <rect key="frame" x="44" y="872" width="352" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="oVs-ux-JTc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="LENTO"/>
+                                    <segment title="NORMAL"/>
+                                    <segment title="RAPIDO"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cambiarVelocidad:" destination="BYZ-38-t0r" eventType="valueChanged" id="A7U-Pw-Xlw"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gRi-HZ-NuX">
+                                <rect key="frame" x="349" y="831" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="gV2-Le-LU8"/>
+                                    <constraint firstAttribute="height" constant="31" id="n9S-K3-zYg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="encenderApagar:" destination="BYZ-38-t0r" eventType="valueChanged" id="lIx-TS-4DW"/>
+                                </connections>
+                            </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camina1.png" translatesAutoresizingMaskIntoConstraints="NO" id="zpj-ES-Jae">
+                                <rect key="frame" x="10" y="121" width="420" height="700"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ut2-iP-bHB" secondAttribute="bottom" constant="10" id="1EK-WK-8v7"/>
+                            <constraint firstItem="Ut2-iP-bHB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="37C-aV-HPk"/>
+                            <constraint firstItem="Ut2-iP-bHB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jsr-4D-0Gv"/>
+                            <constraint firstItem="Ut2-iP-bHB" firstAttribute="top" secondItem="gRi-HZ-NuX" secondAttribute="bottom" constant="10" id="PBe-dE-WIG"/>
+                            <constraint firstItem="4Ow-sq-04G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RhW-g7-Um2"/>
+                            <constraint firstItem="zpj-ES-Jae" firstAttribute="top" secondItem="4Ow-sq-04G" secondAttribute="bottom" constant="10" id="TJv-iy-69c"/>
+                            <constraint firstItem="gRi-HZ-NuX" firstAttribute="trailing" secondItem="Ut2-iP-bHB" secondAttribute="trailing" id="UNg-Hd-i8g"/>
+                            <constraint firstItem="zpj-ES-Jae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="g6t-ch-Sj8"/>
+                            <constraint firstAttribute="trailing" secondItem="zpj-ES-Jae" secondAttribute="trailing" constant="10" id="hab-AL-Cw8"/>
+                            <constraint firstItem="4Ow-sq-04G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jie-vZ-e8R"/>
+                            <constraint firstItem="gRi-HZ-NuX" firstAttribute="top" secondItem="zpj-ES-Jae" secondAttribute="bottom" constant="10" id="yeI-wC-Chv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imvAnimacion" destination="zpj-ES-Jae" id="sqm-Aw-xHQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="129.54545454545456" y="-27.615062761506277"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camina1.png" width="550" height="400"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
